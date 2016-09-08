@@ -1,0 +1,681 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>foldl and foldr · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Local.html" />
+    
+    
+    <link rel="prev" href="Filter.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">About the Course</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../meta/Introduction.html">
+            
+                <a href="../../meta/Introduction.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../meta/Differences.html">
+            
+                <a href="../../meta/Differences.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Course Versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../meta/Racket.html">
+            
+                <a href="../../meta/Racket.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    On Racket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../meta/Inclusivity.html">
+            
+                <a href="../../meta/Inclusivity.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Inclusivity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../meta/JavaScript.html">
+            
+                <a href="../../meta/JavaScript.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Responsibilities</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../responsibilities/Overview.html">
+            
+                <a href="../../responsibilities/Overview.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../responsibilities/Tutorials.html">
+            
+                <a href="../../responsibilities/Tutorials.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../responsibilities/OfficeHours.html">
+            
+                <a href="../../responsibilities/OfficeHours.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Office Hours
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../responsibilities/Piazza.html">
+            
+                <a href="../../responsibilities/Piazza.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Piazza
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../responsibilities/Conduct.html">
+            
+                <a href="../../responsibilities/Conduct.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    Professional Conduct
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Course Material</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Types.html">
+            
+                <a href="../Types.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../Lambda.html">
+            
+                <a href="../Lambda.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    lambda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../recursion/">
+            
+                <a href="../recursion/">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    Recursion
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../Recursion/Accumulators.html">
+            
+                <a href="../Recursion/Accumulators.html">
+            
+                    
+                        <b>4.3.1.</b>
+                    
+                    Accumulators
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../BigBang.html">
+            
+                <a href="../BigBang.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    big-bang
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    Higher-Order Functions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="Map.html">
+            
+                <a href="Map.html">
+            
+                    
+                        <b>4.5.1.</b>
+                    
+                    map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.2" data-path="Filter.html">
+            
+                <a href="Filter.html">
+            
+                    
+                        <b>4.5.2.</b>
+                    
+                    filter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.5.3" data-path="Fold.html">
+            
+                <a href="Fold.html">
+            
+                    
+                        <b>4.5.3.</b>
+                    
+                    foldl and foldr
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../Local.html">
+            
+                <a href="../Local.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    local
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../imperative/README.md">
+            
+                <span>
+            
+                    
+                        <b>4.7.</b>
+                    
+                    Imperative Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../GLOSSARY.html">
+            
+                <a href="../../GLOSSARY.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    Glossary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >foldl and foldr</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="foldl-and-foldr"><code>foldl</code> and <code>foldr</code></h1><pre><code class="lang-scheme"><span class="token punctuation">(</span><span class="token function">foldl</span> proc init lst ...+<span class="token punctuation">)</span> -Any
+<span class="token punctuation">(</span><span class="token function">foldr</span> proc init lst ...+<span class="token punctuation">)</span> -Any</code></pre>
+<p><code>foldl</code> and <code>foldr</code> both act as reducers on lists, using <code>proc</code> to &quot;fold&quot; each item of the list in turn into the initial value <code>init</code>.</p><p>The signature of <code>proc</code> is important. More specifically, the type signature of <code>foldl</code>/<code>foldr</code> with one <code>lst</code> argument is</p><pre><code>(X Y -Y) Y [List-of-X] -Y</code></pre>
+<p>meaning that <code>proc</code> should take two arguments (if there is one <code>lst</code>) like so:</p><pre><code>item-from-lst accumulated-value</code></pre>
+<h2 id="usage">Usage</h2><p>The canonical example of <code>foldl</code> usage is taking the sum of a list of numbers:</p><pre><code class="lang-scheme"><span class="token punctuation">(</span><span class="token keyword">define</span> numbers <span class="token string">&apos;</span><span class="token punctuation">(</span><span class="token function">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">; `proc` is the addition function, `+`</span>
+<span class="token comment" spellcheck="true">; `init` is 0</span>
+<span class="token comment" spellcheck="true">; `lst` is `numbers`</span>
+<span class="token punctuation">(</span><span class="token function">foldl</span> + <span class="token number">0</span> numbers<span class="token punctuation">)</span>
+<span class="token number">21</span>
+
+<span class="token comment" spellcheck="true">; Using foldl to concatenate a list of strings</span>
+<span class="token punctuation">(</span><span class="token keyword">define</span> words <span class="token string">&apos;</span><span class="token punctuation">(</span><span class="token string">&quot;madam&quot;</span> <span class="token string">&quot;im&quot;</span> <span class="token string">&quot;adam&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">(</span><span class="token function">foldl</span> string-append <span class="token string">&quot;&quot;</span> words<span class="token punctuation">)</span>
+<span class="token string">&quot;adamimmadam&quot;</span></code></pre>
+<h2 id="difference-between-foldl-and-foldr">Difference Between <code>foldl</code> and <code>foldr</code></h2><p>The most important difference between <code>foldl</code> and <code>foldr</code> is that <code>foldl</code> traverses the list from left-to-right, and <code>foldr</code> from right-to-left. Continuing the above example,</p><pre><code class="lang-scheme"><span class="token punctuation">(</span><span class="token function">foldl</span> string-append <span class="token string">&quot;&quot;</span> words<span class="token punctuation">)</span>
+<span class="token string">&quot;adamimmadam&quot;</span>
+
+<span class="token comment" spellcheck="true">; foldr does things the other way around</span>
+<span class="token punctuation">(</span><span class="token function">foldr</span> string-append <span class="token string">&quot;&quot;</span> words<span class="token punctuation">)</span>
+<span class="token string">&quot;madamimadam&quot;</span></code></pre>
+<p>How does this affect implementation? The difference is that <code>foldl</code> is tail-recursive, whereas <code>foldr</code> is not.</p><p>With <code>foldl</code> (and accumulator patterns generally), <code>proc</code> is applied to the current list value and the <strong>accumulator</strong>. That is, the recursive expression looks like this:</p><pre><code class="lang-scheme"><span class="token punctuation">(</span><span class="token function">my-foldl</span> proc
+          <span class="token punctuation">(</span><span class="token function">proc</span> <span class="token punctuation">(</span><span class="token function">first</span> lst<span class="token punctuation">)</span> init<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">; proc applied here</span>
+          <span class="token punctuation">(</span><span class="token function">rest</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>With <code>foldr</code> and non-optimized patterns, <code>proc</code> is applied to the current value and the <strong>result of recursing on the rest of the list</strong>. That is, evaluation cannot complete until the entire list has been traversed.</p><pre><code class="lang-scheme"><span class="token punctuation">(</span><span class="token function">proc</span> <span class="token punctuation">(</span><span class="token function">first</span> lst<span class="token punctuation">)</span>     <span class="token comment" spellcheck="true">; proc is all the way up here</span>
+      <span class="token punctuation">(</span><span class="token function">my-foldr</span> proc
+                init  <span class="token comment" spellcheck="true">; init is unmodified</span>
+                <span class="token punctuation">(</span><span class="token function">rest</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h2 id="student-language-implementations">Student Language Implementations</h2><p>Student lang implementations of each function, demonstrating how the difference in order of application affects the structure and space efficiency of each function:</p><pre><code class="lang-scheme"><span class="token comment" spellcheck="true">; foldl is constant space because it uses an accumulator</span>
+<span class="token punctuation">(</span><span class="token keyword">define</span> <span class="token punctuation">(</span><span class="token function">my-foldl</span> proc init lst<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span><span class="token keyword">cond</span>
+    <span class="token comment" spellcheck="true">; In the base case, return init</span>
+    [<span class="token punctuation">(</span><span class="token function">empty?</span> lst<span class="token punctuation">)</span> init]
+    [else
+     <span class="token comment" spellcheck="true">; Fold current list item into the accumulator</span>
+     <span class="token comment" spellcheck="true">; and pass that to the next recursive call,</span>
+     <span class="token comment" spellcheck="true">; as the new init</span>
+     <span class="token punctuation">(</span><span class="token function">my-foldl</span> proc
+               <span class="token punctuation">(</span><span class="token function">proc</span> <span class="token punctuation">(</span><span class="token function">first</span> lst<span class="token punctuation">)</span> init<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">; new init</span>
+               <span class="token punctuation">(</span><span class="token function">rest</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span>]<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">(</span><span class="token keyword">define</span> <span class="token punctuation">(</span><span class="token function">my-foldr</span> proc init lst<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span><span class="token keyword">cond</span>
+    <span class="token comment" spellcheck="true">; In the base case, return init</span>
+    [<span class="token punctuation">(</span><span class="token function">empty?</span> lst<span class="token punctuation">)</span> init]
+    [else
+     <span class="token comment" spellcheck="true">; Since we are starting from the end of the list</span>
+     <span class="token comment" spellcheck="true">; or innermost pair, we will use parenthetical order</span>
+     <span class="token comment" spellcheck="true">; of operations to make sure the inner items get folded</span>
+     <span class="token comment" spellcheck="true">; first.</span>
+     <span class="token punctuation">(</span><span class="token function">proc</span> <span class="token punctuation">(</span><span class="token function">first</span> lst<span class="token punctuation">)</span>
+           <span class="token punctuation">(</span><span class="token function">my-foldr</span> proc
+                     init
+                     <span class="token punctuation">(</span><span class="token function">rest</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>]<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h2 id="teaching-notes">Teaching Notes</h2><p>These are typically the most confusing higher-order functions in EECS 111. Whereas previous examples such as <code>map</code> and <code>filter</code> preserve the shape of the input <code>lst</code>, <code>foldl</code> and <code>foldr</code> flatten them completely using a vaguely arcane mechanism, which breaks with students&apos; mental models for higher-order functions.</p><p>When first introducing <code>foldl</code>/<code>foldr</code>, it can help to follow this order:</p><ol><li>Demonstrate usage of the &quot;fold&quot; mechanic, using just <code>foldl</code> and an associative procedure (e.g. <code>+</code> and <code>*</code>)
+</li>
+<li>Introduce the difference between the two functions at a high level using a non-associative procedure (e.g. <code>-</code>)
+</li>
+<li>Show how implementation varies between the two functions (with <code>foldl</code> being constant-space)
+</li></ol>
+<p>It is important to introduce both <code>+</code> and <code>*</code> in Step 1, in order to demonstrate two different <code>init</code> values.</p><pre><code class="lang-scheme"><span class="token punctuation">(</span><span class="token function">foldl</span> + <span class="token number">0</span> <span class="token string">&apos;</span><span class="token punctuation">(</span><span class="token function">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">; the additive identity is 0</span>
+<span class="token punctuation">(</span><span class="token function">foldl</span> * <span class="token number">1</span> <span class="token string">&apos;</span><span class="token punctuation">(</span><span class="token function">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">; the multiplicative identity is 1</span></code></pre>
+<p><strong>Make sure to guide students through Step 2 carefully.</strong> It is easy to choose arguments without thinking, which result in identical output from <code>foldl</code> and <code>foldr</code>.</p><p>Namely, even if the student uses a non-associative function such as <code>-</code>, passing a <code>lst</code> with an odd number of elements or duplicate elements can sometimes cause <code>foldl</code> and <code>foldr</code> to produce the same value:</p><pre><code class="lang-scheme">&gt; <span class="token punctuation">(</span><span class="token function">foldl</span> - <span class="token number">0</span> <span class="token string">&apos;</span><span class="token punctuation">(</span><span class="token function">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">3</span>
+&gt; <span class="token punctuation">(</span><span class="token function">foldr</span> - <span class="token number">0</span> <span class="token string">&apos;</span><span class="token punctuation">(</span><span class="token function">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">3</span>
+&gt; <span class="token punctuation">(</span><span class="token function">foldr</span> - <span class="token number">0</span> <span class="token string">&apos;</span><span class="token punctuation">(</span><span class="token function">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">0</span>
+&gt; <span class="token punctuation">(</span><span class="token function">foldl</span> - <span class="token number">0</span> <span class="token string">&apos;</span><span class="token punctuation">(</span><span class="token function">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">0</span></code></pre>
+<p>Take care to show <code>(foldl - ...)</code> examples with an odd number of unique <code>lst</code> elements.</p><p>Students also get extremely confused when tracing the execution of both functions in their student language implementations. Prepare for tutorials by tracing through a couple of examples until you are rock-solid on how they work.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Filter.html" class="navigation navigation-prev " aria-label="Previous page: filter">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Local.html" class="navigation navigation-next " aria-label="Next page: local">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"foldl and foldr","level":"4.5.3","depth":2,"next":{"title":"local","level":"4.6","depth":1,"path":"material/Local.md","ref":"material/Local.md","articles":[]},"previous":{"title":"filter","level":"4.5.2","depth":2,"path":"material/higher-order/Filter.md","ref":"material/higher-order/Filter.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","katex","livereload"],"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"prism":{"css":["prismjs/themes/prism.css"]},"katex":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"structure":{"langs":"LANGS.md","readme":"ABOUT.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"material/higher-order/Fold.md","mtime":"2016-09-06T06:05:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-08T05:42:45.090Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
