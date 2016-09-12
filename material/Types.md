@@ -63,7 +63,7 @@ Strings, like symbols, are ordered sets of characters.  They can be mutable or i
 
 If you're asked to explain strings in a little more depth, the most important thing is that strings are arrays of characters.  Each character has a position in the string, and that character can be changed (for mutable strings).  The array is of fixed length, so if you try to add a character, a whole new array is created to contain the now longer string.  The opposite goes for removing a character.  There's not too much other nuance going on besides character encoding, but I've covered that under characters.
 
-# Functions
+### Functions
 Functions are a primitive type, or a class of primitive types, but we've covered them under **Anonymous Functions**.
 
 ## Collections
