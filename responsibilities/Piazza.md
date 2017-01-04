@@ -8,6 +8,7 @@ In general, if you don't know how to answer a question, searching Piazzas from p
 
 - [**Fall 2015**](https://piazza.com/class/iepxvzuz8aj7) with Ian
 - [**Winter 2016**](https://piazza.com/class/ih6kwocczc35s7) with Sara
+- [**Fall 2016**](https://piazza.com/class/itaob6n4wpk6nf) with Ian
 
 ## Formatting
 

@@ -6,7 +6,7 @@ We expect each TA to host **at least two office hours per week**.
 
 At the beginning of each quarter, we send out a Google Sheet so that everyone can coordinate office hours. **Please try to spread your hours out** as best as possible so that we may accommodate as many students as possible! 
 
-Since we have roughly one zillion TAs staffing Fall 2016, time overlaps are inevitable. **We encourage overlapping TAs to hold pooled office hours.** Pooling is especially helpful for newer TAs, particularly when hours get busy or questions get hard.
+Since we have roughly one zillion TAs staffing Winter 2017, time overlaps are inevitable. **We encourage overlapping TAs to hold pooled office hours.** Pooling is especially helpful for newer TAs, particularly when hours get busy or questions get hard.
 
 ## Rescheduling
 

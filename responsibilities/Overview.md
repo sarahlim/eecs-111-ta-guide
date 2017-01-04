@@ -2,13 +2,12 @@
 
 As TAs, your primary responsibilities are:
 
-- Leading weekly **tutorials** of 5-7 students, and
-- Holding weekly **office hours**.
+- Leading weekly **tutorials** of 6 students, and
+- Holding weekly **mentor hours**.
 
 In addition, we ask that you help by:
 
-- Attending the weekly **staff meeting**,
-- Proctoring and grading the three quarterly **quizzes**,
+- Proctoring and grading the two quarterly **quizzes**,
 - Answering questions on **Piazza**.
 
 Your position is paid for **6 hours per week**, so the total (outside of quiz grading and proctoring) time spent should land around there.
@@ -28,7 +27,7 @@ It's always good to brush up on rusty concepts, especially if you took the cours
 At a bare minimum,
 
 - **Before each tutorial, you should have worked through the tutorial and understood it completely, and**
-- **Before your office hours, you should have worked through the homework assignment for that week, and understood it completely.**
+- **Before your mentor hours, you should have worked through the homework assignment for that week, and understood it completely.**
 
 Feel free to ask questions on Slack if you have any!
 
@@ -36,25 +35,19 @@ Feel free to ask questions on Slack if you have any!
 
 See the [full article on tutorials](./Tutorials.html).
 
-## Office Hours
+## Mentor Hours
 
 See the [full article on office hours](./OfficeHours.html).
 
-## Staff Meeting
+## Correspondence
 
-By default, the staff meeting will be **Thursdays at 5pm in Tech L324**.
-
-It’s inevitable that some people will be unable to make it.  If you can’t make it, then you should **sign up for an extra hour of office hours or tutorials**.
+If you were a peer mentor in the past, you may be used to weekly staff meetings. This quarter (W2017), we have decided to eliminate these meetings in favor of a digest email that Sara sends out each week. 
 
 ## Quizzes
 
-There will be **three quizzes**, the last of which we be held during the final exam slot.
+There will be **two quizzes**, the last of which we be held during the final exam slot.
 
 We will have a grading pizza party for each quiz. **Grading typically lasts about 3 hours**, sometimes as little as 2.
-
-To make sure it runs as smoothly as possible, we will also ask you to **sanity check the quiz before we hand it out**. That means we all get together and take the quiz during the staff meeting prior. Nobody will see your answers.
-
-Your goal in taking the quiz is actively to be confused by it so we can **find all the bugs, ambiguities, and partial credit nightmares in advance**, thus allowing everybody, both students and staff, to have a much less painful experience.
 
 # Piazza
 
