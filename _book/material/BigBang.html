@@ -527,16 +527,16 @@
 with <code>big-bang</code> later they should go back and try to finish this one for practice.</p><h1 id="part-1">Part 1</h1><p><code>big-bang</code> is a reactive library for making games in the student languages.</p><p>All <code>big-bang</code> programs consist a world state, a drawing function of type <code>world-state -&gt; image</code> and
 several handler functions roughly of <code>event world-state -&gt; world-state</code>.</p><p>The world state is just a piece of data that represents the world.</p><p>The drawing function will take the current world state and return an image to be drawn to the screen.</p><p>The handler functions take in an event (mouse click, clock tick, etc) and the current state of the
 &quot;world&quot; and returns a new stat for the world.</p><p>Every time an event occurs <code>big-bang</code> gets the new world state using the appropriate handler and
-then redraws the world.</p><p>A simple example:</p><p>This program will draw a circle that grows on each clock tick, resetting when it hits the edge of the screen.</p><p>First we require the libraries for drawing and <code>big-bang</code>:</p><pre><code>(require 2htdp/universe)
+then redraws the world.</p><p>A simple example:</p><p>This program will draw a circle that grows on each clock tick, resetting when it hits the edge of the screen.</p><p>First we require the libraries for drawing and <code>big-bang</code>:</p><pre class="language-"><code>(require 2htdp/universe)
 (require 2htdp/image)</code></pre>
-<p>We will also want a constant for our screen size:</p><pre><code>(define SIZE 100)</code></pre>
+<p>We will also want a constant for our screen size:</p><pre class="language-"><code>(define SIZE 100)</code></pre>
 <p>Our big bang function will only react to clock ticks so we only need one handler, plus the starting
-world state and drawing function. Thus our main function looks like:</p><pre><code>(define (go)
+world state and drawing function. Thus our main function looks like:</p><pre class="language-"><code>(define (go)
   (big-bang 0 ;; world-state, integer, represents radius of the ball
             (to-draw draw-the-world) ;; drawing function
             (on-tick grow-ball))) ;; ticking function</code></pre>
 <p>Now to the ticking function. It will grow the ball, unless the ball has reached the size of the
-screen, in which case it will reset the ball size.</p><pre><code>;; grow-ball: Integer -&gt; Integer
+screen, in which case it will reset the ball size.</p><pre class="language-"><code>;; grow-ball: Integer -&gt; Integer
 ;; grow the ball, or reset its size
 (define (grow-ball radius)
   (if (&gt; radius (/ SIZE 2))
@@ -544,7 +544,7 @@ screen, in which case it will reset the ball size.</p><pre><code>;; grow-ball: I
       (add1 radius)))
 (check-expect (grow-ball 0) 1)
 (check-expect (grow-ball (/ SIZE 2)) 0)</code></pre>
-<p>Finally the drawing function, which draws a circle with the radius of the current ball to a screen of size <code>SIZE</code>.</p><p>In generall <code>big-bang</code> programs take this form:</p><pre><code>(big-bang <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>initial-state</span><span class="token punctuation">&gt;</span></span>
+<p>Finally the drawing function, which draws a circle with the radius of the current ball to a screen of size <code>SIZE</code>.</p><p>In generall <code>big-bang</code> programs take this form:</p><pre class="language-"><code>(big-bang <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>initial-state</span><span class="token punctuation">&gt;</span></span>
          (to-draw <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>drawing-func</span><span class="token punctuation">&gt;</span></span>)
          (on-tick <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tick-handler-function</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional-tick-rate</span><span class="token punctuation">&gt;</span></span>)
          (on-key <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key-down-handler-function</span><span class="token punctuation">&gt;</span></span>)
@@ -629,7 +629,7 @@ don&apos;t forget to look in the documentation for examples!
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"big-bang","level":"4.4","depth":1,"next":{"title":"Higher-Order Functions","level":"4.5","depth":1,"path":"material/higher-order/README.md","ref":"material/higher-order/README.md","articles":[{"title":"map","level":"4.5.1","depth":2,"path":"material/higher-order/Map.md","ref":"material/higher-order/Map.md","articles":[]},{"title":"filter","level":"4.5.2","depth":2,"path":"material/higher-order/Filter.md","ref":"material/higher-order/Filter.md","articles":[]},{"title":"foldl and foldr","level":"4.5.3","depth":2,"path":"material/higher-order/Fold.md","ref":"material/higher-order/Fold.md","articles":[]}]},"previous":{"title":"Accumulators","level":"4.3.1","depth":2,"path":"material/Recursion/Accumulators.md","ref":"material/Recursion/Accumulators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","katex","livereload"],"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"prism":{"css":["prismjs/themes/prism.css"]},"katex":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"structure":{"langs":"LANGS.md","readme":"ABOUT.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"material/BigBang.md","mtime":"2016-09-06T06:13:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-08T05:42:45.090Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"big-bang","level":"4.4","depth":1,"next":{"title":"Higher-Order Functions","level":"4.5","depth":1,"path":"material/higher-order/README.md","ref":"material/higher-order/README.md","articles":[{"title":"map","level":"4.5.1","depth":2,"path":"material/higher-order/Map.md","ref":"material/higher-order/Map.md","articles":[]},{"title":"filter","level":"4.5.2","depth":2,"path":"material/higher-order/Filter.md","ref":"material/higher-order/Filter.md","articles":[]},{"title":"foldl and foldr","level":"4.5.3","depth":2,"path":"material/higher-order/Fold.md","ref":"material/higher-order/Fold.md","articles":[]}]},"previous":{"title":"Accumulators","level":"4.3.1","depth":2,"path":"material/Recursion/Accumulators.md","ref":"material/Recursion/Accumulators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","katex"],"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"prism":{"css":["prismjs/themes/prism.css"]},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"structure":{"langs":"LANGS.md","readme":"ABOUT.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"material/BigBang.md","mtime":"2016-09-06T06:13:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-01-05T22:25:45.643Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -637,10 +637,6 @@ don&apos;t forget to look in the documentation for examples!
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

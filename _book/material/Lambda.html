@@ -523,7 +523,44 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="anonymous-functions-and-lambda">Anonymous Functions and <code>lambda</code></h1>
+                                <h1 id="anonymous-functions-and-lambda">Anonymous Functions and <code>lambda</code></h1><p>Anonymous functions, also known as lambdas, are functions that have no name, that is they are bound to no identifier.  Functions are a type of data, just like numbers, booleans, etc. They can be passed as arguments just like anything else.  They can be assigned to an identifier just like anything else.  This can be <em>really confusing</em> to people.  It may take some time to get to understanding.  To start, this point should be stressed:</p><pre class="language-"><code class="lang-scheme"><span class="token boolean">#t</span>he syntax
+<span class="token punctuation">(</span><span class="token keyword">define</span> <span class="token punctuation">(</span><span class="token function">foo</span> x<span class="token punctuation">)</span> ...<span class="token punctuation">)</span>
+
+#is just shorthand for
+<span class="token punctuation">(</span><span class="token keyword">define</span> foo <span class="token punctuation">(</span><span class="token function">&#x3BB;</span> <span class="token punctuation">(</span>x<span class="token punctuation">)</span> ...<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>The point being anonymous functions are not special.  They&apos;ve been using functions the whole time. <code>+</code>, <code>-</code>, <code>sqrt</code> etc. can all go in the same place as lambdas.  Lambda is probably best explained by use cases:</p><pre class="language-"><code class="lang-scheme">#argument reduction <span class="token punctuation">(</span>currying<span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">define</span> <span class="token punctuation">(</span><span class="token function">add-n-to-list</span> n lst<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span><span class="token function">map</span> <span class="token punctuation">(</span><span class="token function">&#x3BB;</span> <span class="token punctuation">(</span>lst-element<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">+</span> n lst-element<span class="token punctuation">)</span>
+       lst<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">(</span><span class="token function">add-n-to-list</span> <span class="token number">3</span> <span class="token punctuation">(</span><span class="token builtin">list</span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+&gt; <span class="token string">&apos;</span><span class="token punctuation">(</span><span class="token function">4</span> <span class="token number">5</span> <span class="token number">6</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">(</span><span class="token keyword">define</span> <span class="token punctuation">(</span><span class="token function">get-fraction-func</span> divisor<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span><span class="token function">&#x3BB;</span> <span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">/</span> x divisor<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">(</span><span class="token keyword">define</span> halve <span class="token punctuation">(</span><span class="token function">get-fraction-func</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token function">halve</span> <span class="token number">6</span><span class="token punctuation">)</span>
+&gt; <span class="token number">3</span>
+
+<span class="token punctuation">(</span><span class="token keyword">define</span> quarter <span class="token punctuation">(</span><span class="token function">get-fraction</span> func <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token function">quarter</span> <span class="token number">6</span><span class="token punctuation">)</span>
+&gt; <span class="token number">1.5</span>
+
+# closures <span class="token punctuation">(</span><span class="token function">access</span> to variables after scope is closed<span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">define</span> <span class="token punctuation">(</span><span class="token function">get-comp-func</span> threshold<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span><span class="token function">&#x3BB;</span> <span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">&gt;</span> x threshold<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">(</span><span class="token keyword">define</span> positive <span class="token punctuation">(</span><span class="token function">get-comp-func</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token function">positive</span> <span class="token number">-1</span><span class="token punctuation">)</span>
+&gt; <span class="token boolean">#f</span>
+
+# creates a function that compares the argument to some number within the given range
+<span class="token punctuation">(</span><span class="token keyword">define</span> <span class="token punctuation">(</span><span class="token function">get-secret-number-func</span> lower-bound length<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span><span class="token function">&#x3BB;</span> <span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">=</span> x <span class="token punctuation">(</span><span class="token operator">+</span> <span class="token punctuation">(</span><span class="token function">random</span> length<span class="token punctuation">)</span> lower-bound<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>People tend to get confused with the arguments to lambdas.  The syntax of them, or what will be going in them, or even sometimes they forget that the lambda should have a spot for arguments!  I emphasize the parts of lambda: &#x3BB;, the arguments, then the body.  3 parts.  Try to hit on that lambda expressions produce actions, not numbers/symbols/etc. Remember that anonymous functions are difficult and are often used in conjunction with other difficult (and related) concepts: higher order functions and recursion.  Be patient, and steadfast in the core concepts: functions are a data type, and anonymous functions are doing the same thing as the other functions we&apos;ve used and written!</p>
                                 
                                 </section>
                             
@@ -566,7 +603,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"lambda","level":"4.2","depth":1,"next":{"title":"Recursion","level":"4.3","depth":1,"path":"material/recursion/README.md","ref":"material/recursion/README.md","articles":[{"title":"Accumulators","level":"4.3.1","depth":2,"path":"material/Recursion/Accumulators.md","ref":"material/Recursion/Accumulators.md","articles":[]}]},"previous":{"title":"Types","level":"4.1","depth":1,"path":"material/Types.md","ref":"material/Types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","katex","livereload"],"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"prism":{"css":["prismjs/themes/prism.css"]},"katex":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"structure":{"langs":"LANGS.md","readme":"ABOUT.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"material/Lambda.md","mtime":"2016-09-08T01:28:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-08T05:42:45.090Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"lambda","level":"4.2","depth":1,"next":{"title":"Recursion","level":"4.3","depth":1,"path":"material/recursion/README.md","ref":"material/recursion/README.md","articles":[{"title":"Accumulators","level":"4.3.1","depth":2,"path":"material/Recursion/Accumulators.md","ref":"material/Recursion/Accumulators.md","articles":[]}]},"previous":{"title":"Types","level":"4.1","depth":1,"path":"material/Types.md","ref":"material/Types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","katex"],"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"prism":{"css":["prismjs/themes/prism.css"]},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"structure":{"langs":"LANGS.md","readme":"ABOUT.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"material/Lambda.md","mtime":"2017-01-05T22:12:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-01-05T22:25:45.643Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -574,10 +611,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
