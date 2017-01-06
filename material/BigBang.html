@@ -1,0 +1,653 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>big-bang · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="higher-order/" />
+    
+    
+    <link rel="prev" href="Recursion/Accumulators.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">About the Course</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../meta/Introduction.html">
+            
+                <a href="../meta/Introduction.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../meta/Differences.html">
+            
+                <a href="../meta/Differences.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Course Versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../meta/Racket.html">
+            
+                <a href="../meta/Racket.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    On Racket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../meta/Inclusivity.html">
+            
+                <a href="../meta/Inclusivity.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Inclusivity
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Responsibilities</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../responsibilities/Overview.html">
+            
+                <a href="../responsibilities/Overview.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../responsibilities/Tutorials.html">
+            
+                <a href="../responsibilities/Tutorials.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../responsibilities/OfficeHours.html">
+            
+                <a href="../responsibilities/OfficeHours.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Office Hours
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../responsibilities/Piazza.html">
+            
+                <a href="../responsibilities/Piazza.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Piazza
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../responsibilities/Conduct.html">
+            
+                <a href="../responsibilities/Conduct.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    Professional Conduct
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Course Material</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="Types.html">
+            
+                <a href="Types.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="Lambda.html">
+            
+                <a href="Lambda.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    lambda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="recursion/">
+            
+                <a href="recursion/">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    Recursion
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="Recursion/Accumulators.html">
+            
+                <a href="Recursion/Accumulators.html">
+            
+                    
+                        <b>4.3.1.</b>
+                    
+                    Accumulators
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.4" data-path="BigBang.html">
+            
+                <a href="BigBang.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    big-bang
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="higher-order/">
+            
+                <a href="higher-order/">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    Higher-Order Functions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="higher-order/Map.html">
+            
+                <a href="higher-order/Map.html">
+            
+                    
+                        <b>4.5.1.</b>
+                    
+                    map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.2" data-path="higher-order/Filter.html">
+            
+                <a href="higher-order/Filter.html">
+            
+                    
+                        <b>4.5.2.</b>
+                    
+                    filter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.3" data-path="higher-order/Fold.html">
+            
+                <a href="higher-order/Fold.html">
+            
+                    
+                        <b>4.5.3.</b>
+                    
+                    foldl and foldr
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="Local.html">
+            
+                <a href="Local.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    local
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="imperative/README.md">
+            
+                <span>
+            
+                    
+                        <b>4.7.</b>
+                    
+                    Imperative Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../GLOSSARY.html">
+            
+                <a href="../GLOSSARY.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    Glossary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >big-bang</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="big-bang"><code>big-bang</code></h1><p>A simple <code>big-bang</code> tutorial. Part one is to be <em>explained to students in tutorial</em>. Part 2 is the students exercises.</p><p>Students should understand that they are not expected to finish the tutorial. If they have problems
+with <code>big-bang</code> later they should go back and try to finish this one for practice.</p><h1 id="part-1">Part 1</h1><p><code>big-bang</code> is a reactive library for making games in the student languages.</p><p>All <code>big-bang</code> programs consist a world state, a drawing function of type <code>world-state -&gt; image</code> and
+several handler functions roughly of <code>event world-state -&gt; world-state</code>.</p><p>The world state is just a piece of data that represents the world.</p><p>The drawing function will take the current world state and return an image to be drawn to the screen.</p><p>The handler functions take in an event (mouse click, clock tick, etc) and the current state of the
+&quot;world&quot; and returns a new stat for the world.</p><p>Every time an event occurs <code>big-bang</code> gets the new world state using the appropriate handler and
+then redraws the world.</p><p>A simple example:</p><p>This program will draw a circle that grows on each clock tick, resetting when it hits the edge of the screen.</p><p>First we require the libraries for drawing and <code>big-bang</code>:</p><pre class="language-"><code>(require 2htdp/universe)
+(require 2htdp/image)</code></pre>
+<p>We will also want a constant for our screen size:</p><pre class="language-"><code>(define SIZE 100)</code></pre>
+<p>Our big bang function will only react to clock ticks so we only need one handler, plus the starting
+world state and drawing function. Thus our main function looks like:</p><pre class="language-"><code>(define (go)
+  (big-bang 0 ;; world-state, integer, represents radius of the ball
+            (to-draw draw-the-world) ;; drawing function
+            (on-tick grow-ball))) ;; ticking function</code></pre>
+<p>Now to the ticking function. It will grow the ball, unless the ball has reached the size of the
+screen, in which case it will reset the ball size.</p><pre class="language-"><code>;; grow-ball: Integer -&gt; Integer
+;; grow the ball, or reset its size
+(define (grow-ball radius)
+  (if (&gt; radius (/ SIZE 2))
+      0
+      (add1 radius)))
+(check-expect (grow-ball 0) 1)
+(check-expect (grow-ball (/ SIZE 2)) 0)</code></pre>
+<p>Finally the drawing function, which draws a circle with the radius of the current ball to a screen of size <code>SIZE</code>.</p><p>In generall <code>big-bang</code> programs take this form:</p><pre class="language-"><code>(big-bang <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>initial-state</span><span class="token punctuation">&gt;</span></span>
+         (to-draw <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>drawing-func</span><span class="token punctuation">&gt;</span></span>)
+         (on-tick <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tick-handler-function</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional-tick-rate</span><span class="token punctuation">&gt;</span></span>)
+         (on-key <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key-down-handler-function</span><span class="token punctuation">&gt;</span></span>)
+         (stop-when <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>should-i-stop-function</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional-last-scene-function</span><span class="token punctuation">&gt;</span></span>))</code></pre>
+<ol><li><p>The initial state can be any type you wish</p></li>
+<li><p><code>to-draw</code> says &quot;use this function to draw the current state&quot;.</p></li>
+<li><p><code>on-tick</code> says &quot;use this function to advance the state each clock tick&quot;. You can provide a
+optional number for the tick rate.</p></li>
+<li><p>on-key says &quot;use this function to handle key presses&quot;. Its signature is <code>(world-state key-event?
+-&gt; world-state)</code>. <code>key-event?</code>s are string that represent the key pressed. So &quot;q&quot; for q, &quot; &quot; for
+space, &quot;\t&quot; for tab, &quot;up&quot; for &#x2191; etc.</p></li>
+<li><p><code>stop-when</code> says &quot;stop big bang whenever this function returns true&quot;. (So its a function of
+<code>(world-state -&gt; boolean)</code>). It gets run any time a handler is run. You can provide an optional
+procedure to render the final state for you. Otherwise the <code>on-draw</code> function is used.</p></li></ol>
+<p>In addition if any handler evaluates to <code>(stop-with <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>some-world-state</span><span class="token punctuation">&gt;</span></span>)</code> the game will stop as if
+the <code>stop-when</code> handler had returned true.</p><p>Other handlers exists. We will have you look them up in the documentation yourself later.</p><h1 id="part-2">Part 2</h1><h2 id="exersize-1">Exersize 1</h2><p>Design a bouncing ball animation. The ball should start at the top of the screen, fall until it hits the bottom, then move back up.</p><p>You will need the following things:</p><ol><li>A representation of state. The only thing you need to keep track of is the height of the ball.
+</li>
+<li>A draw function that takes this representation and draws it to a screen
+</li>
+<li>A tick function that moves the ball based on the specification above.
+</li></ol>
+<h2 id="exersize-2">Exersize 2</h2><p>Design an animation where a ball travels around the screen in a circle. The animation should stop
+when the user clicks on the screen. (It does not need to resume if the player clicks again)</p><p>You will need:</p><ol><li>A representation of state that keeps track of where the ball is in its circlar motion. Think back to your geometry class (I know, <em>shudder</em>). 
+</li>
+<li>A draw function, as usual.
+</li>
+<li>A tick function that moves the ball farther along its arc.
+</li>
+<li>An <code>on-mouse</code> handler that stops the game. You will need to look up this handler in the
+documentation. Don&apos;t forget <code>stop-with</code> for stoping the game!
+</li></ol>
+<h2 id="exersize-3">Exersize 3</h2><p>Design a simple guessing number game. The player will pick a whole number between 1 and 100, and the
+game will attempt to guess it. If the number is too low the player will let the game know by
+pressing <em>&#x2191;</em>. If the number is too low, the player will press <em>&#x2191;</em>. If the number is correct the
+player will press <em>=</em>, which will end the game.</p><p>You will need:</p><ol><li>A state that somehow represents what the game is guessing
+</li>
+<li>Draw function that displays the current guess
+</li>
+<li>A key handler that deals with the keys from above. If you have difficulty with this function
+don&apos;t forget to look in the documentation for examples!
+</li></ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Recursion/Accumulators.html" class="navigation navigation-prev " aria-label="Previous page: Accumulators">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="higher-order/" class="navigation navigation-next " aria-label="Next page: Higher-Order Functions">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"big-bang","level":"4.4","depth":1,"next":{"title":"Higher-Order Functions","level":"4.5","depth":1,"path":"material/higher-order/README.md","ref":"material/higher-order/README.md","articles":[{"title":"map","level":"4.5.1","depth":2,"path":"material/higher-order/Map.md","ref":"material/higher-order/Map.md","articles":[]},{"title":"filter","level":"4.5.2","depth":2,"path":"material/higher-order/Filter.md","ref":"material/higher-order/Filter.md","articles":[]},{"title":"foldl and foldr","level":"4.5.3","depth":2,"path":"material/higher-order/Fold.md","ref":"material/higher-order/Fold.md","articles":[]}]},"previous":{"title":"Accumulators","level":"4.3.1","depth":2,"path":"material/Recursion/Accumulators.md","ref":"material/Recursion/Accumulators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","katex"],"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"prism":{"css":["prismjs/themes/prism.css"]},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"structure":{"langs":"LANGS.md","readme":"ABOUT.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"material/BigBang.md","mtime":"2016-09-12T19:29:18.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-01-06T06:46:28.069Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
